@@ -11,10 +11,10 @@ function getAllHobbies(users) {
     return uniqueHobbies;
 }
 
-const users = [
+const usersList = [
     { id: 1, name: 'Alice', hobbies: ['Reading', 'Drawing'] },
     { id: 2, name: 'Bob', hobbies: ['Gaming', 'Cooking', 'Reading'] },
 ];
 
-const result = getAllHobbies(users);
-console.log(result);
+const uniqueHobbiesResult = getAllHobbies(usersList);
+console.log(uniqueHobbiesResult);
