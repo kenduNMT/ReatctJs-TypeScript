@@ -12,7 +12,7 @@ function groupEmployeesByAttribute(employees, attribute) {
     return groupedEmployees;
 }
 
-const employees = [
+const employeesList = [
     { id: 1, name: 'Alice', age: 25, department: 'HR' },
     { id: 2, name: 'Bob', age: 30, department: 'IT' },
     { id: 3, name: 'Charlie', age: 25, department: 'Marketing' },
@@ -20,8 +20,8 @@ const employees = [
     { id: 5, name: 'Eve', age: 30, department: 'HR' }
 ];
 
-const groupedByAge = groupEmployeesByAttribute(employees, 'age');
+const groupedByAge = groupEmployeesByAttribute(employeesList, 'age');
 console.log(groupedByAge);
 
-const groupedByDepartment = groupEmployeesByAttribute(employees, 'department');
+const groupedByDepartment = groupEmployeesByAttribute(employeesList, 'department');
 console.log(groupedByDepartment);
