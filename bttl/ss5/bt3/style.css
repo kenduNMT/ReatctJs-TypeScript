@@ -1,0 +1,44 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    background-color: #12C1FC;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.input-group input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group-append button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-primary {
+    background-color: #00af4fcb;
+    border-color: #00af4fcb;
+}
+
+.btn-primary:hover {
+    background-color: #00af4fcb;
+    border-color: #00af4fcb;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+}
+
+.list-group-item.completed {
+    background-color: #d4edda;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
