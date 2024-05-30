@@ -19,44 +19,45 @@ function validatePositiveNumbers(args: any[]): boolean {
     return args.every(arg => typeof arg === 'number' && arg > 0);
 }
 
-// Sử dụng hàm decorator với hàm validatePositiveNumbers
-const validatedAdd = validateDecorator(validatePositiveNumbers)(null, "validatedAdd", {
-    value: (a: number, b: number): number => {
+// Sử dụng decorator @validateDecorator với hàm validatePositiveNumbers
+class Calculator {
+    @validateDecorator(validatePositiveNumbers)
+    add(a: number, b: number): number {
         return a + b;
-    },
-} as PropertyDescriptor).value;
+    }
 
-// Gọi hàm với các tham số hợp lệ
-try {
-    console.log(validatedAdd(2, 3)); 
-} catch (error) {
-    console.error((error as Error).message);
-}
-
-// Gọi hàm với các tham số không hợp lệ
-try {
-    console.log(validatedAdd(-1, 3)); 
-} catch (error) {
-    console.error((error as Error).message);
-}
-
-// Thêm ví dụ hàm không cần class
-const validatedMultiply = validateDecorator(validatePositiveNumbers)(null, "validatedMultiply", {
-    value: (a: number, b: number): number => {
+    @validateDecorator(validatePositiveNumbers)
+    multiply(a: number, b: number): number {
         return a * b;
-    },
-} as PropertyDescriptor).value;
+    }
+}
+
+const calculator = new Calculator();
 
 // Gọi hàm với các tham số hợp lệ
 try {
-    console.log(validatedMultiply(4, 5)); 
+    console.log(calculator.add(2, 3)); 
 } catch (error) {
     console.error((error as Error).message);
 }
 
 // Gọi hàm với các tham số không hợp lệ
 try {
-    console.log(validatedMultiply(4, -5)); 
+    console.log(calculator.add(-1, 3)); 
+} catch (error) {
+    console.error((error as Error).message);
+}
+
+// Gọi hàm với các tham số hợp lệ
+try {
+    console.log(calculator.multiply(4, 5)); 
+} catch (error) {
+    console.error((error as Error).message);
+}
+
+// Gọi hàm với các tham số không hợp lệ
+try {
+    console.log(calculator.multiply(4, -5)); 
 } catch (error) {
     console.error((error as Error).message);
 }
